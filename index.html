@@ -166,6 +166,10 @@
   .tags{display:flex;flex-wrap:wrap;gap:6px}
   .tags span{font-size:12px;padding:3px 10px;border-radius:999px;background:rgba(99,102,241,.14);color:#c7d2fe;border:1px solid rgba(99,102,241,.3)}
   .proj:has(.feat) .top{padding-right:88px}
+  .plinks{display:flex;gap:8px;margin-top:14px}
+  .pl{font-size:13px;font-weight:600;text-decoration:none;padding:6px 14px;border-radius:999px;background:linear-gradient(90deg,#7c3aed,#2563eb)}
+  .pl.ghost{background:transparent;border:1px solid var(--line)}
+  .pl:hover{box-shadow:0 0 18px rgba(124,58,237,.5)}
   .feat{position:absolute;top:18px;right:18px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--grad);color:#0b0b1f;font-weight:700}
 
   .edu{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -238,7 +242,7 @@
     <div class="skills">
       <div class="card rv"><h3>Languages</h3><div class="chips"><span class="chip">Java</span><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">JavaScript</span><span class="chip">Data Structures</span></div></div>
       <div class="card rv"><h3>Web</h3><div class="chips"><span class="chip">React</span><span class="chip">Flask</span><span class="chip">REST APIs</span><span class="chip">HTML</span><span class="chip">CSS</span></div></div>
-      <div class="card rv"><h3>AI &amp; Data</h3><div class="chips"><span class="chip">Generative AI</span><span class="chip">Gemini API</span><span class="chip">scikit-learn</span><span class="chip">NumPy</span><span class="chip">SQLite</span></div></div>
+      <div class="card rv"><h3>AI &amp; Data</h3><div class="chips"><span class="chip">Generative AI</span><span class="chip">Gemini API</span><span class="chip">Naive Bayes</span><span class="chip">NumPy</span><span class="chip">PostgreSQL</span><span class="chip">SQLite</span></div></div>
       <div class="card rv"><h3>Tools &amp; Security</h3><div class="chips"><span class="chip">Git &amp; GitHub</span><span class="chip">Linux</span><span class="chip">SDLC</span><span class="chip">Information Security</span></div></div>
     </div>
   </section>
@@ -264,9 +268,10 @@
       </article>
       <article class="card proj rv">
         <div class="top"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#67e8f9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.7L18.5 9l-4.6 1.4L12 15l-1.9-4.6L5.5 9l4.6-1.3z"/><path d="M19 15l.8 2 2 .8-2 .7-.8 2-.7-2-2-.7 2-.8z"/></svg></div>
-          <div><h3>Personal Budget Tracker</h3><div class="sub">AI-powered finance app</div></div></div>
-        <p>A multi-user finance app with AI features: Gemini-powered natural-language and voice entry, AI spending insights, and a scikit-learn model that auto-categorises transactions.</p>
-        <div class="tags"><span>Python</span><span>Flask</span><span>SQLite</span><span>Gemini API</span><span>scikit-learn</span></div>
+          <div><h3>Ledgerly – Personal Budget Tracker</h3><div class="sub">AI-powered finance app · Live</div></div></div>
+        <p>A full-stack finance app: log entries in plain words or through a Gemini-powered voice and chat assistant, set monthly budgets with pace projections, track a financial health score, and get category suggestions from a per-user Naive Bayes model written in pure Python.</p>
+        <div class="tags"><span>Python</span><span>Flask</span><span>PostgreSQL</span><span>Gemini API</span><span>Vercel</span></div>
+        <div class="plinks"><a class="pl" href="https://ledgerly-tracker-eight.vercel.app">▶ Live demo</a><a class="pl ghost" href="https://github.com/anivisVector/Personal-Budget-Tracker">Code</a></div>
       </article>
       <article class="card proj rv">
         <div class="top"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 5-6"/></svg></div>
@@ -317,7 +322,7 @@
   } else { els.forEach(function(el){ el.classList.add('in'); }); }
 
   // typed phrases
-  var phrases = ['AI-powered, secure web apps', 'full-stack projects with Flask & React', 'smart features with Gemini & scikit-learn', 'clean, practical software'];
+  var phrases = ['AI-powered, secure web apps', 'full-stack projects with Flask & React', 'smart features with the Gemini API', 'clean, practical software'];
   var t = document.getElementById('typed');
   if (t && !reduce) {
     var p = 0, c = phrases[0].length, del = true;
